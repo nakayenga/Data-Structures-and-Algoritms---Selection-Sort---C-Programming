@@ -1,0 +1,40 @@
+#include <stdio.h>
+int main(){
+  int size;
+  int a[10];
+  int i;
+  int temp;
+  int j;
+  /*Enter the size of your array*/
+  printf("Enter the size of your array:\n");
+  scanf("%d",&size);
+  
+  /*Enter thee elements of your array*/
+  printf("Enter the elements of your array:\n");
+  for(i=0; i<size; i++){
+  scanf("%d",&a[i]);
+  }
+  
+  /*Print the user's array before sorting it*/
+  printf("Unsorted\n");
+  for(i=0; i<size; i++){
+    printf("%d\t",a[i]);
+  }
+  printf("\n");
+  /*Logic of selection sort*/
+  /*We are going to select the minimum in the entire array and bring it to the front*/
+  for(i=0; i<size; i++){
+    for(j=i+1; j<size; j++){
+      if(a[j]<a[i]){
+        temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
+      }  
+    } 
+  }
+  /*Print the array after sorting it*/
+  printf("Sorted\n");
+  for(i=0; i<size; i++){
+    printf("%d\t", a[i]);
+  }
+}
